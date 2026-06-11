@@ -34,6 +34,10 @@ class AlumnoController extends Controller
                 'codigo' => ['required', 'string', 'unique:alumnos,codigo'],
                 'nombre' => ['required', 'string', 'min:5', 'max:100'],
                 'email' => ['required', 'email', 'unique:alumnos,email'],
+            ], [
+                'codigo.required' => 'Debe ingresar el código del alumno.',
+                'nombre.required' => 'Debe ingresar el nombre del alumno.',
+                'email.required' => 'Debe ingresar el correo del alumno.',
             ]);
         } catch (\Illuminate\Validation\ValidationException $e) {
             return \App\Helpers\ApiResponse::validationError(

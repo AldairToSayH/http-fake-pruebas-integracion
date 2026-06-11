@@ -16,7 +16,11 @@ class PadronAcademicoService
 
     public function existeCodigo(string $codigo): bool
     {
-        $response = Http::get("{$this->baseUrl}/api/alumnos/{$codigo}");
+        try {
+            $response = Http::get("{$this->baseUrl}/api/alumnos/{$codigo}");
+        } catch (\Throwable $e) {
+            return false;
+        }
 
         return $response->successful();
     }

@@ -11,14 +11,14 @@ class RegistrarAlumnoIntegracionTest extends TestCase {
 
     public function test_registra_y_sincroniza_un_alumno_aislando_el_servicio_externo(): void
     {
-        /*
+    
         Http::fake([
             'https://padron.test/api/alumnos/A002' => Http::response(['existe' => true], 200),
             'https://padron.test/api/alumnos' => Http::response([
                 'message' => 'Alumno sincronizado',
             ], 200),
         ]);
-        */
+    
      $payload = [
             'codigo' => 'A002',
             'nombre' => 'Carlos Medina',
