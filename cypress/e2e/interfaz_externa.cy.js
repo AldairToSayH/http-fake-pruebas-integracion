@@ -1,13 +1,15 @@
-describe('Agregar producto al carrito', () => {
-    it('Debe agregar el producto blue top y mostrar popup Added', () => {
-      cy.visit('/products')
-  
-      cy.contains('.productinfo', 'Blue Top')
-        .parents('.single-products')
-        .trigger('mouseover')
-  
-      cy.contains('Add to cart').click()
-  
-      cy.contains('Added').should('be.visible')
+describe('Prueba de aceptación sobre una interfaz externa de demostración', () => {
+    it('interactúa con controles del sitio de ejemplo de Cypress', () => {
+    cy.visit('https://example.cypress.io/commands/actions')
+    cy.get('.action-email')
+    .type('estudiante@example.com')
+    .should('have.value', 'estudiante@example.com')
+    cy.get('.action-checkboxes [type="checkbox"]')
+    .first()
+    .check()
+    .should('be.checked')
+    cy.get('.action-select')
+    .select('apples')
+    .should('have.value', 'fr-apples')
     })
-  })
+   })

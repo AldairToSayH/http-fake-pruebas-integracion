@@ -3,6 +3,6 @@ import { defineConfig } from "cypress";
 export default defineConfig({
   allowCypressEnv: false,
   e2e: {
-    baseUrl: 'https://automationexercise.com',
+    baseUrl: 'http://127.0.0.1:8000',
   },
 });
