@@ -8,3 +8,6 @@ Route::get('/alumnos', [AlumnoPageController::class, 'index'])
 
 Route::get('/alumnos/crear', [AlumnoPageController::class, 'create'])
     ->name('alumnos.create');
+
+Route::view('/alumnos-ui', 'alumnos.ui')
+    ->name('alumnos.ui');
