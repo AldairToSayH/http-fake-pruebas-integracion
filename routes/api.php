@@ -5,3 +5,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/alumnos', [AlumnoApiController::class, 'index']);
 Route::post('/alumnos', [AlumnoApiController::class, 'store']);
+Route::get('/ping', function () {
+    return response()->json([
+        'status' => 'ok',
+        'message' => 'API disponible',
+    ]);
+});
